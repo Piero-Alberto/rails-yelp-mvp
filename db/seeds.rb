@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Restaurant.create(
+
+    name: "La Dolce Vita",
+    address: "123 Via Roma, Ciudad",
+    category: "italian",
+    phone_number: "555-0123"
+
+)

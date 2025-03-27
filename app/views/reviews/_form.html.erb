@@ -1,0 +1,9 @@
+<!-- app/views/reviews/_form.html.erb -->
+<%= simple_form_for [restaurant, review] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :content, label: "Comentario", as: :text, input_html: { rows: 4 } %>
+  <%= f.input :rating, label: "Puntuación", collection: 1..5, prompt: "Selecciona una puntuación" %>
+
+  <%= f.button :submit, "Agregar Reseña", class: "btn-primary" %>
+<% end %>

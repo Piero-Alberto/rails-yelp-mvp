@@ -1,0 +1,11 @@
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for restaurant do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name, label: "Nombre" %>
+  <%= f.input :address, label: "Dirección" %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Selecciona una categoría", label: "Categoría" %>
+  <%= f.input :phone_number, label: "Teléfono" %>
+
+  <%= f.button :submit, "Crear Restaurante", class: "btn-primary" %>
+<% end %>

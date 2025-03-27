@@ -1,0 +1,29 @@
+<!-- app/views/restaurants/show.html.erb -->
+<h1><%= @restaurant.name %></h1>
+
+<div class="mb-4">
+  <p><strong>Dirección:</strong> <%= @restaurant.address %></p>
+  <p><strong>Categoría:</strong> <%= @restaurant.category.capitalize %></p>
+  <p><strong>Teléfono:</strong> <%= @restaurant.phone_number %></p>
+</div>
+
+<h2>Reseñas</h2>
+<% if @restaurant.reviews.any? %>
+  <ul class="list-group mb-4">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <p><%= review.content %></p>
+        <% if review.rating.present? %>
+          <p><strong>Puntuación:</strong> <%= review.rating %>/5</p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Este restaurante aún no tiene reseñas.</p>
+<% end %>
+
+<h3>Agregar una Reseña</h3>
+<%= render "reviews/form", restaurant: @restaurant, review: @restaurant.reviews.build %>
+
+<%= link_to "Volver a la lista", restaurants_path, class: "btn btn-secondary" %>

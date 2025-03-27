@@ -1,0 +1,21 @@
+<h1>lista de restaurantes</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Categoría</th>
+      <th>Teléfono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.category.capitalize %></td>
+        <td><%= restaurant.phone_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
